@@ -1,0 +1,5 @@
+My name is Krishna Sridhar — a recent graduate, experienced web developer, and passionate AI enthusiast with 3 years of professional experience. 
+My technical foundation lies in front-end and full-stack development, with strong expertise in JavaScript frameworks such as React, Angular, and Node.js.
+Now, I'm pursuing my masters degree in Information technology and management with the specialization of Web Design and Application Development, and I'm deeply focusing on Agentic AI and workflow automation, building intelligent systems using n8n and Python-based agents that execute real-world tasks autonomously.
+
+My favourite food is biriyani.
