@@ -8,10 +8,10 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(title="Krishna Sridhar Chatbot API")
 
 origins = [
-    "http://127.0.0.1:3000",   # local Next.js
+    "http://127.0.0.1:8000",   # local Next.js
     "http://localhost:3000",   # also common in Next.js
     "https://agentic-ai-ov9y.onrender.com",  # your deployed backend (optional)
-    "https://krishna-portfolio-nu.vercel.app/"  # add this when you deploy frontend
+    "https://krishna-portfolio-nu.vercel.app"  # add this when you deploy frontend
 ]
 
 
