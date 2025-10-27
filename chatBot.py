@@ -162,7 +162,12 @@ evaluator_system_prompt = f"""You are an evaluator for a {name}'s website chatbo
     Here is the information:
     Summary: {summary}
     LinkedIn Profile: {linkedin}
-    Resume: {resume}"""
+    Resume: {resume}
+    
+    Return a JSON with exactly these fields:
+    - is_acceptable: boolean
+    - feedback: string
+    """
 
 
 
@@ -186,6 +191,7 @@ gemini = OpenAI(
 def evaluator(message, reply, history) -> Evaluation:
     messages = [{"role": "system", "content": evaluator_system_prompt}] + [{"role": "user", "content": evaluator_user_prompt(reply, message, history)}]
     response = gemini.beta.chat.completions.parse(model="gemini-2.0-flash", messages=messages, response_format=Evaluation)
+    print(response.choices[0].message.content)
     return response.choices[0].message.parsed
 
 
