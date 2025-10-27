@@ -25,7 +25,6 @@ def push(message):
     )
 
 # %%
-push("hey")
 
 # %%
 def record_user_details(email, name, message="not provides"):
@@ -142,11 +141,14 @@ system_prompt += f"\n\n## Summary:\n{summary}\n\n## LinkedIn Profile:\n{linkedin
 system_prompt += f"With this context, please chat with the user, always staying in character as {name}."
 
 # %%
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 class Evaluation(BaseModel):
-    is_acceptable: bool
-    feedback: str
+    is_acceptable: bool = Field(alias="acceptability")
+    feedback: str = Field(alias="reason")
+
+    class Config:
+        populate_by_name = True
 
 # %%
 evaluator_system_prompt = f"""You are an evaluator for a {name}'s website chatbot agent. \
